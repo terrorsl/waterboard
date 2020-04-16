@@ -6,7 +6,7 @@
 
 #define GHOTA_USER "terrorsl"
 #define GHOTA_REPO "waterboard"
-#define GHOTA_CURRENT_TAG "0.0.1"
+#define GHOTA_CURRENT_TAG "v0.1"
 #define GHOTA_BIN_FILE "waterboard_esp8266_home.bin"
 #define GHOTA_ACCEPT_PRERELEASE 0
 
@@ -37,6 +37,7 @@ public:
 		if(ota->checkUpgrade())
 		{
 			Serial.println(ota->getUpgradeURL());
+			ota->doUpgrade();
 		}
 		else
 			Serial.println(ota->getLastError());
